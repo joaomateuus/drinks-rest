@@ -7,7 +7,7 @@ class TestViews(TestCase):
     def setUp(self):
         self.client = Client()
         self.list_url = reverse('drinks')
-        self.details_url = reverse('drinks_details', args=(1, ))
+        self.details_url = reverse('drinks_details', kwargs={"id": 1})
         
         self.cerveja = Drink.objects.create(
             id = 1,
